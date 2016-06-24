@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+   <project name="systemhealthchecks-test" default="healthcheck">
+   
+   <target name="healthcheck">
+      <echo>Hello World - Welcome to Apache Ant!</echo>
+	<exec dir="." executable="powershell" timeout="5000" failonerror="true"
+        outputproperty="myscript.out" errorproperty="myscript.error">
+    <arg line="-ExecutionPolicy bypass" />
+    <arg line="-File test.ps1" />
+</exec>
+   </target>
+   
+</project>
