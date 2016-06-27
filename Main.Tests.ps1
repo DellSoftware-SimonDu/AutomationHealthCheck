@@ -1,5 +1,5 @@
 ﻿$here = Split-Path -Parent $MyInvocation.MyCommand.Path
-. "$here\main1.ps1"
+. "$here\main.ps1"
  
 
 Describe -Tags "HealthCheck" "HealthCheck Results" {
