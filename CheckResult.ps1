@@ -159,7 +159,7 @@ $Params5 = ($Params.StaticHealthChecks | ? {$_.HealthCheckName -eq "dr_backup"})
 $Params6 = ($Params.StaticHealthChecks | ? {$_.HealthCheckName -eq "dr_simple_recovery_model"}).HealthCheckScore
 $Params7 = ($Params.StaticHealthChecks | ? {$_.HealthCheckName -eq "configuration_database_compatibility_level"}).HealthCheckScore
 
-$CheckResult0 = $ParamHashTable.TotalScoreIncludingIgnoredChecks = ('{0:n2}' -f $params0 -eq [decimal]"84.28")
+$CheckResult0 = $ParamHashTable.TotalScoreIncludingIgnoredChecks = ('{0:n2}' -f $params0 -eq [decimal]"74.28")
 $CheckResult1 = $ParamHashTable.memory_physical_memory_pressure = ($Params.StaticHealthChecks | ? {$_.HealthCheckName -eq "memory_physical_memory_pressure"}).HealthCheckScore -eq [int]"100.0"
 $CheckResult2 = $ParamHashTable.memory_adhoc_workload_configuration = ($Params.StaticHealthChecks | ? {$_.HealthCheckName -eq "memory_adhoc_workload_configuration"}).HealthCheckScore -eq [int]"100.0"
 $CheckResult3 = $ParamHashTable.security_password_policy = ($Params.StaticHealthChecks | ? {$_.HealthCheckName -eq "security_password_policy"}).HealthCheckScore -eq $null
@@ -170,7 +170,7 @@ $CheckResult7 = $ParamHashTable.configuration_database_compatibility_level = ($P
 
 $strings = @(("TotalScoreIncludingIgnoredChecks","memory_physical_memory_pressure","memory_adhoc_workload_configuration","security_password_policy","security_guest_access","dr_backup","dr_simple_recovery_model","configuration_database_compatibility_level",`
 $Params0,$Params1,$Params2,$Params3,$Params4,$Params5,$Params6,$Params7),`
-("84.28","100.0","100.0","90","100.0","0","100.0","99",$CheckResult0,$CheckResult1,$CheckResult2,$CheckResult3,$CheckResult4,$CheckResult5,$CheckResult6,$CheckResult7))
+("74.28","100.0","100.0","90","100.0","0","100.0","99",$CheckResult0,$CheckResult1,$CheckResult2,$CheckResult3,$CheckResult4,$CheckResult5,$CheckResult6,$CheckResult7))
 
 $ResultOutput = for($i=0;$i -le 7;$i++) {StringVersions -inputString $strings[0][$i] -ExpectedValueString $strings[1][$i] -ActualValue $strings[0][$i+8] -Result $strings[1][$i+8] }
 $ResultOutput
