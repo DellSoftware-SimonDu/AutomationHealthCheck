@@ -1,15 +1,12 @@
 ﻿
 #########Upload sample data to Test Essential website#######
-
-
-cd C:\pester
-. .\UploadSampleAndTrigger.ps1
-UploadSampleData
-SendMessageToQueue
+cd "C:\Program Files (x86)\Jenkins\jobs\systemhealthchecks-test\workspace"
+.\UploadSampleAndTrigger.ps1
 
 
 #########Analyze Health Check data##########################
 . .\CheckResult.ps1
  
-CopyJsonFile
 StringVersions
+
+
