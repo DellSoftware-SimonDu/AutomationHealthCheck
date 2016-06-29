@@ -29,6 +29,6 @@ Describe -Tags "HealthCheck" "HealthCheck Results" {
        CheckIndividualResult -Result6 100| Should Be $true
     }
     It "configuration_database_compatibility_level results" {
-       CheckIndividualResult -Result7 99| Should Be $true
+       CheckIndividualResult -Result7 99.0| Should Be $true
     }
 }
