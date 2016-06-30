@@ -213,3 +213,6 @@ param([string]$inputString,$ExpectedValueString,$ActualValue,$Result)
 
   Write-Host ($obj | Format-Table | Out-String)
 }  
+
+
+Remove-Item -Path C:\Pester -Force -Recurse
