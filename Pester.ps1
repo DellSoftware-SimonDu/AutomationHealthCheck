@@ -1,4 +1,8 @@
-﻿
+﻿write-host "###############################################################"
+write-host "#"
+write-host "#  Import powershell module Pester"
+write-host "#"
+write-host "###############################################################"
 
 
 $TargetFolder = "C:\Pester"
