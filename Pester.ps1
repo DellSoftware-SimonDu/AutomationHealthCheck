@@ -1,4 +1,17 @@
-﻿New-Item -Path C:\Pester -ItemType directory
+﻿
+
+
+$TargetFolder = "C:\Pester"
+if(!(Test-Path $TargetFolder))
+{
+    New-Item -Path $TargetFolder -ItemType Directory -Force
+}
+else
+{
+    Remove-Item -Path $TargetFolder -Recurse -Force
+    New-Item -Path $TargetFolder -ItemType Directory -Force
+
+}
 
 $pesterUri = "https://spotlightautomation.blob.core.windows.net/sampledata/Pester-master.zip"
 $pestFile =  "C:\Pester\Pester-master.zip"
