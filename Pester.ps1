@@ -1,14 +1,4 @@
-﻿$TargetFolder ="C:\Pester"
-if(!(Test-Path $TargetFolder))
-{
-    New-Item -Path $TargetFolder -ItemType Directory -Force
-}
-else
-{
-    Remove-Item -Path $TargetFolder -Recurse -Force
-    New-Item -Path $TargetFolder -ItemType Directory -Force
-
-}
+﻿New-Item -Path C:\Pester -ItemType directory
 
 $pesterUri = "https://spotlightautomation.blob.core.windows.net/sampledata/Pester-master.zip"
 $pestFile =  "C:\Pester\Pester-master.zip"
@@ -19,6 +9,11 @@ Invoke-WebRequest -Uri $pesterUri -OutFile $pestFile -UseBasicParsing
 Function Unzip()
 {
     param([string]$ZipFile,[string]$TargetFolder)
+    #ensure target folder exists
+    if(!(Test-Path $TargetFolder))
+    {
+        mkdir $TargetFolder
+    }
     $shellApp = New-Object -ComObject Shell.Application
     $files = $shellApp.NameSpace($ZipFile).Items()
     $shellApp.NameSpace($TargetFolder).CopyHere($files)
@@ -34,4 +29,4 @@ Import-Module $pester
 Invoke-Pester -EnableExit -OutputFile "./CheckResult.xml" -OutputFormat NUnitXml #-Path "C:\Program Files (x86)\Jenkins\jobs\$ENV:JOB_NAME\workspace\Healthcheck.ps1"
 
 
- 
+#Remove-Item -Path C:\Pester -Force -Recurse
