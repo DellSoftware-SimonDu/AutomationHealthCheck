@@ -1,5 +1,15 @@
-﻿
-#Download sample data for Azure blob
+﻿###############################################################
+#
+#  download the sample JSON from blob 
+#
+###############################################################
+
+write-host "###############################################################"
+write-host "#"
+write-host "#  download the sample JSON from blob"
+write-host "#"
+write-host "###############################################################"
+
 $TargetFolder = "C:\JSON"
 if(!(Test-Path $TargetFolder))
 {
@@ -33,6 +43,12 @@ unzip -ZipFile $JSONFile -TargetFolder $TargetFolder
 #   upload JSON files
 #
 ###############################################################
+write-host "###############################################################"
+write-host "#"
+write-host "#  upload JSON files"
+write-host "#"
+write-host "###############################################################"
+
 # read UserToken from file
 $UserToken = get-content "C:\JSON\0_usertoken.txt"
 
