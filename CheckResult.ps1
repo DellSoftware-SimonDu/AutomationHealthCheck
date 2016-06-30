@@ -4,6 +4,12 @@
 #
 ###############################################################
 
+write-host "###############################################################"
+write-host "#"
+write-host "#  before send test message to Queue, download LATEST.json and rename to OLD.json"
+write-host "#"
+write-host "###############################################################"
+
 #verify the DatePerformed of result JSON file is later than the one before putting the Queue message
 function GetFileContent($Path,$ContentName){    #get the key value from JSON file
    $FileContent = get-content $Path | ConvertFrom-json
@@ -44,6 +50,11 @@ Get-ChildItem -Path $ResultJSONFolder -Filter '*.json' -Recurse | Rename-Item -N
 #   send test message to Queue to trigger the schedule job
 #
 ###############################################################
+write-host "###############################################################"
+write-host "#"
+write-host "#  send test message to Queue to trigger the schedule job"
+write-host "#"
+write-host "###############################################################"
 
 $StorageAccountName = "lucystagingstorageus" 
 $StorageAccountKey = "s1bQ/9f2S5JxPMBw7OhKMSGAoqVBAhAtu4yyDnugD/kbIo/OXZRh8E8IYRkya2m7dxc9KFF4+9XkYYbdKfHznw==" 
@@ -76,7 +87,11 @@ Start-Sleep -seconds 120  #set wait time for file is generated
 #  Download the result JSON file from container 'sqlserver-static-health-check' 
 #
 ###############################################################################
-
+write-host "###############################################################"
+write-host "#"
+write-host "#  Download the result JSON file from blob container"
+write-host "#"
+write-host "###############################################################"
 
 #download the result JSON
 
@@ -114,6 +129,12 @@ if($LatestJSON.DatePerformed -gt $OldJSON.DatePerformed){
 #  Check health check result 
 #
 ###############################################################################
+write-host "###############################################################"
+write-host "#"
+write-host "#  Check health check results"
+write-host "#"
+write-host "###############################################################"
+
 function CheckIndividualResult([decimal]$Result0,$Result1,$Result2,$Result3,$Result4,$Result5,$Result6,$Result7)
 {
  
