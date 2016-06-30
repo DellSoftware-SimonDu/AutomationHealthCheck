@@ -191,7 +191,7 @@ $CheckResult7 = $ParamHashTable.configuration_database_compatibility_level = ($P
 
 $strings = @(("TotalScoreIncludingIgnoredChecks","memory_physical_memory_pressure","memory_adhoc_workload_configuration","security_password_policy","security_guest_access","dr_backup","dr_simple_recovery_model","configuration_database_compatibility_level",`
 $Params0,$Params1,$Params2,$Params3,$Params4,$Params5,$Params6,$Params7),`
-("74.28","100.0","100.0","90","100.0","0","100.0","99",$CheckResult0,$CheckResult1,$CheckResult2,$CheckResult3,$CheckResult4,$CheckResult5,$CheckResult6,$CheckResult7))
+("74.28","100.0","100.0","90.0","100.0","0","100.0","99",$CheckResult0,$CheckResult1,$CheckResult2,$CheckResult3,$CheckResult4,$CheckResult5,$CheckResult6,$CheckResult7))
 
 $ResultOutput = for($i=0;$i -le 7;$i++) {StringVersions -inputString $strings[0][$i] -ExpectedValueString $strings[1][$i] -ActualValue $strings[0][$i+8] -Result $strings[1][$i+8] }
 $ResultOutput
