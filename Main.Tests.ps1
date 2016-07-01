@@ -17,7 +17,7 @@ Describe -Tags "HealthCheck" "HealthCheck Results" {
        CheckIndividualResult -Result2 100| Should Be $true
     }
     It "security_password_policy results" {
-       CheckIndividualResult -Result3 90.0| Should Be $true
+       CheckIndividualResult -Result3 90| Should Be $true
     }
     It "security_guest_access results" {
        CheckIndividualResult -Result4 100| Should Be $true
