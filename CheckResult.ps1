@@ -142,7 +142,7 @@ $Pattern = "e475bcae-fd1b-4fd7-9f04-015095e81e53/2/54ab6b58-8931-46dd-88ae-b9e80
 $JSONFile = "C:\JSON\Result\" + $Pattern
 $Params = (Get-Content $JSONFile) -join "`n" | ConvertFrom-Json
 
-$Params0 = $Params.TotalScoreIncludingIgnoredChecks 
+$Params0 = '{0:n2}' -f $Params.TotalScoreIncludingIgnoredChecks  
 $Params1 = ($Params.StaticHealthChecks | ? {$_.HealthCheckName -eq "memory_physical_memory_pressure"}).HealthCheckScore
 $Params2 = ($Params.StaticHealthChecks | ? {$_.HealthCheckName -eq "memory_adhoc_workload_configuration"}).HealthCheckScore
 $Params3 = ($Params.StaticHealthChecks | ? {$_.HealthCheckName -eq "security_password_policy"}).HealthCheckScore
