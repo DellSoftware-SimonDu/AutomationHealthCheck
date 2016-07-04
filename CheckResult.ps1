@@ -185,7 +185,8 @@ if ($CompareJson -eq $null)
 }
 Else
 {
-    $CompareJson
+    write-host $CompareJson
+    return $false
 }
 
 }  
