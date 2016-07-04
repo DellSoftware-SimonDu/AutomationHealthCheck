@@ -4,5 +4,7 @@
 .\UploadSampleData.ps1
 
 
+#########Analyze Health Check data##########################
+. .\CheckResult.ps1
 
 
