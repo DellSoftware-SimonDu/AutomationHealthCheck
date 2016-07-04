@@ -135,84 +135,57 @@ write-host "#  Check health check results"
 write-host "#"
 write-host "###############################################################"
 
-function CheckIndividualResult([decimal]$Result0,$Result1,$Result2,$Result3,$Result4,$Result5,$Result6,$Result7)
-{
- 
-$Pattern = "e475bcae-fd1b-4fd7-9f04-015095e81e53/2/54ab6b58-8931-46dd-88ae-b9e80c7195c0/zhuw2k8r2spl300.melquest.dev.mel.au.qsft_sql2008r2_sqlserver/LATEST.json" 
-$JSONFile = "C:\JSON\Result\" + $Pattern
-$Params = (Get-Content $JSONFile) -join "`n" | ConvertFrom-Json
 
-$Params0 = '{0:n2}' -f $Params.TotalScoreIncludingIgnoredChecks  
-$Params1 = ($Params.StaticHealthChecks | ? {$_.HealthCheckName -eq "memory_physical_memory_pressure"}).HealthCheckScore
-$Params2 = ($Params.StaticHealthChecks | ? {$_.HealthCheckName -eq "memory_adhoc_workload_configuration"}).HealthCheckScore
-$Params3 = ($Params.StaticHealthChecks | ? {$_.HealthCheckName -eq "security_password_policy"}).HealthCheckScore
-$Params4 = ($Params.StaticHealthChecks | ? {$_.HealthCheckName -eq "security_guest_access"}).HealthCheckScore 
-$Params5 = ($Params.StaticHealthChecks | ? {$_.HealthCheckName -eq "dr_backup"}).HealthCheckScore 
-$Params6 = ($Params.StaticHealthChecks | ? {$_.HealthCheckName -eq "dr_simple_recovery_model"}).HealthCheckScore
-$Params7 = ($Params.StaticHealthChecks | ? {$_.HealthCheckName -eq "configuration_database_compatibility_level"}).HealthCheckScore
-
-   if ($Result0 -eq $Params0) {return $true} 
-   if ($Result1 -eq $Params1) {return $true}
-   if ($Result2 -eq $Params2) {return $true} 
-   if ($Result3 -eq $Params3) {return $true}
-   if ($Result4 -eq $Params4) {return $true}
-   if ($Result5 -eq $Params5) {return $true}
-   if ($Result6 -eq $Params6) {return $true}
-   if ($Result7 -eq $Params7) {return $true}
-}
 
 function CheckResult
 {
+$CompareJson = @'
+  {
+  "TotalScoreIncludingIgnoredChecks": [
+    77.443280977312384,
+    75.443280977312384
+  ],
+  "TotalScoreExcludingIgnoredChecks": [
+    77.443280977312384,
+    75.443280977312384
+  ],
+  "TopIssues": {
+    "_t": "a",
+    "4": [
+      "memory_physical_memory_pressure"
+    ]
+  },
+  "StaticHealthChecks": {
+    "_t": "a",
+    "0": {
+      "HealthCheckScore": [
+        100.0,
+        95.0
+      ]
+    }
+  },
+  "PhysicalMemoryPressure": {
+    "TrendAnalysis": {
+      "TrendExists": [
+        false,
+        true
+      ],
+      "TrendIsIncreasing": [
+        false,
+        true
+      ]
+    }
+  }
+}
+'@
 
-$Pattern = "e475bcae-fd1b-4fd7-9f04-015095e81e53/2/54ab6b58-8931-46dd-88ae-b9e80c7195c0/zhuw2k8r2spl300.melquest.dev.mel.au.qsft_sql2008r2_sqlserver/LATEST.json" 
-$JSONFile = "C:\JSON\Result\" + $Pattern
-$Params = (Get-Content $JSONFile) -join "`n" | ConvertFrom-Json
-
-
-$ParamHashTable = @{}
-
-$Params0 = '{0:n2}' -f $Params.TotalScoreIncludingIgnoredChecks 
-$Params1 = ($Params.StaticHealthChecks | ? {$_.HealthCheckName -eq "memory_physical_memory_pressure"}).HealthCheckScore
-$Params2 = ($Params.StaticHealthChecks | ? {$_.HealthCheckName -eq "memory_adhoc_workload_configuration"}).HealthCheckScore
-$Params3 = ($Params.StaticHealthChecks | ? {$_.HealthCheckName -eq "security_password_policy"}).HealthCheckScore
-$Params4 = ($Params.StaticHealthChecks | ? {$_.HealthCheckName -eq "security_guest_access"}).HealthCheckScore 
-$Params5 = ($Params.StaticHealthChecks | ? {$_.HealthCheckName -eq "dr_backup"}).HealthCheckScore 
-$Params6 = ($Params.StaticHealthChecks | ? {$_.HealthCheckName -eq "dr_simple_recovery_model"}).HealthCheckScore
-$Params7 = ($Params.StaticHealthChecks | ? {$_.HealthCheckName -eq "configuration_database_compatibility_level"}).HealthCheckScore
-
-$CheckResult0 = $ParamHashTable.TotalScoreIncludingIgnoredChecks = ('{0:n2}' -f $params0 -eq [decimal]"74.28")
-$CheckResult1 = $ParamHashTable.memory_physical_memory_pressure = ($Params.StaticHealthChecks | ? {$_.HealthCheckName -eq "memory_physical_memory_pressure"}).HealthCheckScore -eq [int]"100.0"
-$CheckResult2 = $ParamHashTable.memory_adhoc_workload_configuration = ($Params.StaticHealthChecks | ? {$_.HealthCheckName -eq "memory_adhoc_workload_configuration"}).HealthCheckScore -eq [int]"100.0"
-$CheckResult3 = $ParamHashTable.security_password_policy = ($Params.StaticHealthChecks | ? {$_.HealthCheckName -eq "security_password_policy"}).HealthCheckScore -eq "90.0"
-$CheckResult4 = $ParamHashTable.security_guest_access = ($Params.StaticHealthChecks | ? {$_.HealthCheckName -eq "security_guest_access"}).HealthCheckScore -eq [int]"100.0"
-$CheckResult5 = $ParamHashTable.dr_backup = ($Params.StaticHealthChecks | ? {$_.HealthCheckName -eq "dr_backup"}).HealthCheckScore -eq [int]"0"
-$CheckResult6 = $ParamHashTable.dr_simple_recovery_model = ($Params.StaticHealthChecks | ? {$_.HealthCheckName -eq "dr_simple_recovery_model"}).HealthCheckScore -eq [int]"100.0"
-$CheckResult7 = $ParamHashTable.configuration_database_compatibility_level = ($Params.StaticHealthChecks | ? {$_.HealthCheckName -eq "configuration_database_compatibility_level"}).HealthCheckScore -eq [int]"99"
-
-$strings = @(("TotalScoreIncludingIgnoredChecks","memory_physical_memory_pressure","memory_adhoc_workload_configuration","security_password_policy","security_guest_access","dr_backup","dr_simple_recovery_model","configuration_database_compatibility_level",`
-$Params0,$Params1,$Params2,$Params3,$Params4,$Params5,$Params6,$Params7),`
-("74.28","100.0","100.0","90.0","100.0","0","100.0","99",$CheckResult0,$CheckResult1,$CheckResult2,$CheckResult3,$CheckResult4,$CheckResult5,$CheckResult6,$CheckResult7))
-
-$ResultOutput = for($i=0;$i -le 7;$i++) {StringVersions -inputString $strings[0][$i] -ExpectedValueString $strings[1][$i] -ActualValue $strings[0][$i+8] -Result $strings[1][$i+8] }
-$ResultOutput
-
-if ($ParamHashTable.Values -ccontains $false)
+if ($CompareJson -eq $null)
 {
-    return "False"}
-else {return "All True"}
-#Remove-Item -Path c:\temp\e475bcae-fd1b-4fd7-9f04-015095e81e53 -Force -Recurse
+    return $true
+}
+Else
+{
+    $CompareJson
 }
 
-function StringVersions {
-param([string]$inputString,$ExpectedValueString,$ActualValue,$Result)
-  $obj = New-Object PSObject
-  $obj | Add-Member NoteProperty -name 'Health Check Name' -value $inputString
-  $obj | Add-Member NoteProperty -name 'ExpectedValue'-Value $ExpectedValueString
-  $obj | Add-Member NoteProperty -name 'ActualValue' -Value $ActualValue
-  $obj | Add-Member NoteProperty -name 'Result' -Value $Result
-
-  Write-Host ($obj | Format-Table | Out-String)
 }  
-
-
-Remove-Item -Path C:\Pester -Force -Recurse
