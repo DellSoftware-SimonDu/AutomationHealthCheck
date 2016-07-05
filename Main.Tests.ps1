@@ -60,7 +60,6 @@ Describe -Tags "HealthCheck" "HealthCheck Results" {
     }
        else
     {
-        Write-Host $CompareJson
         throw $CompareJson
     }
    }
