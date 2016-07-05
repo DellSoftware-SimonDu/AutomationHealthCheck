@@ -1,11 +1,18 @@
-﻿$here = Split-Path -Parent $MyInvocation.MyCommand.Path
-. "$here\main.ps1"
- 
+﻿
+.\UploadSampleData.ps1
+. .\CheckResult.ps1
 
 Describe -Tags "HealthCheck" "HealthCheck Results" {
  
     It "Checking health results" {
-       CheckResult | Should Be $true
+       if ($CompareJson -eq $null)
+    {
+        Checkresult | Should Be $true
     }
-   
+       else
+    {
+        throw $CompareJson
+    }
    }
+}
+
