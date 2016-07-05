@@ -2,8 +2,6 @@
 .\UploadSampleData.ps1
 . .\CheckResult.ps1
 
-function CheckResult
-{
 $CompareJson = @'
   {
   "TotalScoreIncludingIgnoredChecks": [
@@ -44,6 +42,8 @@ $CompareJson = @'
 }
 '@
 
+function CheckResult
+{
 if ($CompareJson -eq $null)
 {
     return $true
