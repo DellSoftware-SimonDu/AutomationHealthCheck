@@ -1,6 +1,6 @@
 ﻿
-#.\UploadSampleData.ps1
-#. .\CheckResult.ps1
+.\UploadSampleData.ps1
+. .\CheckResult.ps1
 
 $CompareJson = @'
   {
