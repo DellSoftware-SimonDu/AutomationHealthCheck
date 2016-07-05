@@ -79,7 +79,7 @@ else{
 }
 
 
-Start-Sleep -seconds 10  #set wait time for file is generated
+Start-Sleep -seconds 120  #set wait time for file is generated
 
 
 ###############################################################################
