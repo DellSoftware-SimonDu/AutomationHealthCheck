@@ -1,6 +1,6 @@
 ﻿
-.\UploadSampleData.ps1
-. .\CheckResult.ps1
+#.\UploadSampleData.ps1
+#. .\CheckResult.ps1
 
 $CompareJson = @'
   {
@@ -41,6 +41,7 @@ $CompareJson = @'
   }
 }
 '@
+Set-Variable -Name $CompareJson -Option AllScope
 
 function CheckResult
 {
@@ -59,6 +60,7 @@ Describe -Tags "HealthCheck" "HealthCheck Results" {
     }
        else
     {
+        Write-Host $CompareJson
         throw $CompareJson
     }
    }
