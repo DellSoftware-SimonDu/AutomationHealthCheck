@@ -1,49 +1,28 @@
-﻿write-host "###############################################################"
-write-host "#"
-write-host "#  Import powershell module Pester"
-write-host "#"
-write-host "###############################################################"
+﻿#Requires -Version 3.0
+
+Param(
+    [Parameter(Mandatory=$true)]
+    [string] $ServicePrincipalPassword,
+    [string] $Global:LucyStagingStorageUSKey
+
+)
+
+Import-Module Azure -ErrorAction SilentlyContinue
+
+try {
+    [Microsoft.Azure.Common.Authentication.AzureSession]::ClientFactory.AddUserAgent("VSAzureTools-$UI$($host.name)".replace(" ","_"), "2.9")
+} catch { }
+
+Set-StrictMode -Version 3
+
+$secpasswd = ConvertTo-SecureString $ServicePrincipalPassword -AsPlainText -Force
+$mycreds = New-Object System.Management.Automation.PSCredential ("3a99e1f6-7e90-426e-b399-3536f078f9ca", $secpasswd)
+Login-AzureRmAccount -ServicePrincipal -Tenant 366f6586-9b69-47bd-bfb3-59845478627f -Credential $mycreds
+
+$LucyStagingStorageUSKey = (Get-AzureStorageKey  -StorageAccountName "lucystagingstorageus").Primary
 
 
-$TargetFolder = "C:\Pester"
-if(!(Test-Path $TargetFolder))
-{
-    New-Item -Path $TargetFolder -ItemType Directory -Force
-}
-else
-{
-    Remove-Item -Path $TargetFolder -Recurse -Force
-    New-Item -Path $TargetFolder -ItemType Directory -Force
+Import-Module "$PSScriptRoot\IntegrationTest\Tools\Pester-master\pester.psd1" -ErrorAction SilentlyContinue
 
-}
-
-$pesterUri = "https://spotlightautomation.blob.core.windows.net/sampledata/Pester-master.zip"
-$pestFile =  "C:\Pester\Pester-master.zip"
-
-Invoke-WebRequest -Uri $pesterUri -OutFile $pestFile -UseBasicParsing
-
-
-Function Unzip()
-{
-    param([string]$ZipFile,[string]$TargetFolder)
-    #ensure target folder exists
-    if(!(Test-Path $TargetFolder))
-    {
-        mkdir $TargetFolder
-    }
-    $shellApp = New-Object -ComObject Shell.Application
-    $files = $shellApp.NameSpace($ZipFile).Items()
-    $shellApp.NameSpace($TargetFolder).CopyHere($files)
-}
-#unzip the json files to target folder
-unzip -ZipFile $pestFile -TargetFolder "C:\Pester"
-
-
-$pester = "C:\Pester\Pester-master\pester.psd1"
-Import-Module $pester
-#Get-Module -Name Pester | Select -ExpandProperty ExportedCommands
-
-Invoke-Pester -EnableExit -OutputFile "./CheckResult.xml" -OutputFormat NUnitXml #-Path "C:\Program Files (x86)\Jenkins\jobs\$ENV:JOB_NAME\workspace\Healthcheck.ps1"
-
-
-#Remove-Item -Path C:\Pester -Force -Recurse
+#Invoke-Pester will execute all *.tests.ps1 scripts in current directory
+Invoke-Pester  -OutputFile "./CheckResult.xml" -OutputFormat NUnitXml  

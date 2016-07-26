@@ -1,0 +1,13 @@
+<project name="worker-systemhealthchecks--t--worker-systemhealthchecks-test" default="IntegrationTest" basedir=".">
+  
+  <property name="project.root" location=".." />
+  <property file="C:\ProgramData\SpotlightCloud\Keys\reactive-web.properties"/>
+
+  <target name="IntegrationTest" description="Test System Health Check">
+    <echo message="Runing Pester test case"/>
+    <exec executable="powershell.exe" failonerror="true">
+      <arg line="&amp;${project.root}\IntegrationTest\Pester.ps1" />
+      <arg line="-ServicePrincipalPassword ${service.principal.password}" />
+    </exec>
+  </target>
+</project>
