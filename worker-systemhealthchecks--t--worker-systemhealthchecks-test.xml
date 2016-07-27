@@ -1,10 +1,11 @@
 <project name="worker-systemhealthchecks--t--worker-systemhealthchecks-test" default="IntegrationTest" basedir=".">
   
     <property environment="env"/>
-
+  <property name="project.root" location=".." />
   <target name="IntegrationTest" description="Test System Health Check">
     <echo message="Runing Pester test case"/>
     <exec executable="powershell.exe" failonerror="true">
+      <arg line="&amp;${project.root}\IntegrationTest\Pester.ps1" />
       <arg line="-BuildNumber ${env.BUILD_NUMBER}" />
     </exec>
   </target>
