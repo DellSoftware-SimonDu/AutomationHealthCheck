@@ -1,0 +1,8 @@
+c:\users\sdu1\documents\visual studio 2015\Projects\helloworld\helloworld\obj\Debug\helloworld.csprojResolveAssemblyReference.cache
+c:\users\sdu1\documents\visual studio 2015\Projects\helloworld\helloworld\bin\Debug\helloworld.pdb
+c:\users\sdu1\documents\visual studio 2015\Projects\helloworld\helloworld\obj\Debug\helloworld.pdb
+c:\Users\sdu1\Documents\Visual Studio 2015\Projects\helloworld\helloworld\bin\Debug\helloworld.dll.config
+c:\Users\sdu1\Documents\Visual Studio 2015\Projects\helloworld\helloworld\bin\Debug\helloworld.dll
+c:\Users\sdu1\Documents\Visual Studio 2015\Projects\helloworld\helloworld\bin\Debug\nunit.framework.dll
+c:\Users\sdu1\Documents\Visual Studio 2015\Projects\helloworld\helloworld\bin\Debug\nunit.framework.xml
+c:\Users\sdu1\Documents\Visual Studio 2015\Projects\helloworld\helloworld\obj\Debug\helloworld.dll
