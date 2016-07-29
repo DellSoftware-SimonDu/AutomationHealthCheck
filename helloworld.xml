@@ -4,7 +4,7 @@
   <target name="restore.packages" description="Restore all referenced NuGet packages from Internet or local cache (if downloaded before).">
     <exec executable="C:\Program Files\NuGet\NuGet.exe" failonerror="true">
       <arg value="restore" />
-      <arg file="${project.root}\HelloWorld.sln" />
+      <arg file="${project.root}\workspace\HelloWorld.sln" />
     </exec>
   </target>
 
