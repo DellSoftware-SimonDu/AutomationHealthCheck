@@ -18,7 +18,7 @@
 
   <target name="test" description="Execute unit tests" depends="build" >
     <!-- Make the first request to make Azure website up and running -->
-    <exec executable="C:\Program Files (x86)\NUnit\bin\nunit-console.exe" failonerror="true">
+    <exec executable="C:\Program Files (x86)\NUnit.org\nunit-console\nunit3-console.exe" failonerror="true">
      
       <arg file="${project.root}\helloworld\bin\Release\helloworld.dll" />
       <arg value="--result:${project.root}\TestResults.xml;format=nunit2"/>
