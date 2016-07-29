@@ -1,5 +1,5 @@
 <project name="test" default="test" basedir=".">
-  <property name="project.root" location="." />
+  <property name="project.root" location=".." />
 
   <target name="restore.packages" description="Restore all referenced NuGet packages from Internet or local cache (if downloaded before).">
     <exec executable="C:\Program Files\NuGet\NuGet.exe" failonerror="true">
