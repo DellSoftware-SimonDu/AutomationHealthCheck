@@ -1,6 +1,0 @@
-c:\users\sdu1\documents\visual studio 2015\Projects\helloworld\helloworld\bin\Debug\helloworld.exe.config
-c:\users\sdu1\documents\visual studio 2015\Projects\helloworld\helloworld\obj\Debug\helloworld.csprojResolveAssemblyReference.cache
-c:\users\sdu1\documents\visual studio 2015\Projects\helloworld\helloworld\bin\Debug\helloworld.exe
-c:\users\sdu1\documents\visual studio 2015\Projects\helloworld\helloworld\bin\Debug\helloworld.pdb
-c:\users\sdu1\documents\visual studio 2015\Projects\helloworld\helloworld\obj\Debug\helloworld.exe
-c:\users\sdu1\documents\visual studio 2015\Projects\helloworld\helloworld\obj\Debug\helloworld.pdb
