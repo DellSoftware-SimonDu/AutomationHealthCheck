@@ -1,0 +1,28 @@
+<project name="test" default="test" basedir=".">
+  <property name="project.root" location=".." />
+
+  <target name="restore.packages" description="Restore all referenced NuGet packages from Internet or local cache (if downloaded before).">
+    <exec executable="C:\Program Files\NuGet\NuGet.exe" failonerror="true">
+      <arg value="restore" />
+      <arg file="${project.root}\HelloWorld.sln" />
+    </exec>
+  </target>
+
+  <target name="build" description="Build the whole solution" depends="restore.packages">
+    <exec executable="C:\Program Files (x86)\MSBuild\14.0\Bin\MSBuild.exe" failonerror="true">
+      <arg value="/t:Build"/>
+      <arg file="${project.root}\HelloWorld.sln" />
+      <arg value="/property:Configuration=Release"/>
+    </exec>
+  </target>
+
+  <target name="test" description="Execute unit tests" depends="build" >
+    <!-- Make the first request to make Azure website up and running -->
+    <exec executable="C:\Program Files (x86)\NUnit\bin\nunit-console.exe" failonerror="true">
+     
+      <arg file="${project.root}\bin\Release\HelloWorld.dll" />
+      <arg value="--result:${project.root}\TestResults.xml;format=nunit2"/>
+    </exec>
+  </target>
+
+</project>
