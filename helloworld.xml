@@ -20,7 +20,7 @@
     <!-- Make the first request to make Azure website up and running -->
     <exec executable="C:\Program Files (x86)\NUnit\bin\nunit-console.exe" failonerror="true">
      
-      <arg file="${project.root}\workspace\helloworld\bin\Release\helloworld.dll" />
+      <arg file="${project.root}\helloworld\bin\Release\helloworld.dll" />
       <arg value="--result:${project.root}\TestResults.xml;format=nunit2"/>
     </exec>
   </target>
