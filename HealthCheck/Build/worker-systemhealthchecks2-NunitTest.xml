@@ -12,7 +12,7 @@
 <target name="build" description="Build the whole solution" depends="restore.packages">
     <exec executable="C:\Program Files (x86)\MSBuild\14.0\Bin\MSBuild.exe" failonerror="true">
       <arg value="/t:Build"/>
-      <arg file="${project.root}\HealthCheck\SpotlightCloud-HealthCheck.sln" />
+      <arg file="${project.root}\SpotlightCloud-HealthCheck.sln" />
       <arg value="/property:Configuration=Release"/>
     </exec>
   </target>
@@ -21,7 +21,7 @@
     <!-- Make the first request to make Azure website up and running -->
     <exec executable="C:\Program Files (x86)\NUnit.org\nunit-console\nunit3-console.exe" failonerror="true">
      
-      <arg file="${project.root}\HealthCheck\IntegrationTestV2\bin\Release\IntegrationTestV2.dll" />
+      <arg file="${project.root}\IntegrationTestV2\bin\Release\IntegrationTestV2.dll" />
       <arg value="--result:${project.root}\TestResults.xml;format=nunit2"/>
     </exec>
   </target>
