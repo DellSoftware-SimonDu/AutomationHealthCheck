@@ -7,12 +7,6 @@ namespace helloworld
     [TestFixture]
     public class Program
     {
-        //  static void Main(string[] args)
-        //  {
-        //      System.Console.WriteLine("Hello, World!");
-        //       Console.ReadKey();
-        //   }
-
         [SetUp]
         public void SetUp()
         {
@@ -20,10 +14,11 @@ namespace helloworld
         }
 
         [Test]
-        public void HelloWorld()
+        public void IsTrue()
         {
-            Console.WriteLine("Hello, World!");
-                 
+        //    Console.WriteLine("Hello, World!");
+            Assert.IsTrue(2 + 2 == 5);
+
         }
     }
 }

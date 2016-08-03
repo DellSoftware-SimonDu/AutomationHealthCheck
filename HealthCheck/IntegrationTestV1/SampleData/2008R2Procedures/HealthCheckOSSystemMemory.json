@@ -1,0 +1,110 @@
+{
+"Procedures":[
+	{
+    "Columns": [
+        {
+            "Name": "total_physical_memory_kb",
+            "DataType": 8,
+            "Values": [
+                "2096696"
+            ]
+        },
+        {
+            "Name": "available_physical_memory_kb",
+            "DataType": 8,
+            "Values": [
+                "194820"
+            ]
+        },
+        {
+            "Name": "total_page_file_kb",
+            "DataType": 8,
+            "Values": [
+                "4193392"
+            ]
+        },
+        {
+            "Name": "available_page_file_kb",
+            "DataType": 8,
+            "Values": [
+                "1317732"
+            ]
+        },
+        {
+            "Name": "system_cache_kb",
+            "DataType": 8,
+            "Values": [
+                "194544"
+            ]
+        },
+        {
+            "Name": "kernel_paged_pool_kb",
+            "DataType": 8,
+            "Values": [
+                "279168"
+            ]
+        },
+        {
+            "Name": "kernel_nonpaged_pool_kb",
+            "DataType": 8,
+            "Values": [
+                "79648"
+            ]
+        },
+        {
+            "Name": "system_high_memory_signal_state",
+            "DataType": 4,
+            "Values": [
+                "True"
+            ]
+        },
+        {
+            "Name": "system_low_memory_signal_state",
+            "DataType": 4,
+            "Values": [
+                "False"
+            ]
+        },
+        {
+            "Name": "instance",
+            "DataType": 1,
+            "Values": [
+                "ZHUW2K8R2SPL300\\SQL2008R2"
+            ]
+        },
+        {
+            "Name": "service",
+            "DataType": 1,
+            "Values": [
+                "SQL2008R2"
+            ]
+        },
+        {
+            "Name": "instance_start_time_utc",
+            "DataType": 5,
+            "Values": [
+                "2016-06-16T03:35:50.083-07:00"
+            ]
+        },
+        {
+            "Name": "rownum",
+            "DataType": 8,
+            "Values": [
+                "1"
+            ]
+        }
+    ],
+    "Timestamp": "{{Timestamp}}",
+    "ConnectionName": "zhuw2k8r2spl300.melquest.dev.mel.au.qsft_sql2008r2_sqlserver",
+    "PackageName": "sqlserver_spotlight",
+    "ProcedureName": "healthcheckossystemmemory",
+    "TechnologyName": "database/sqlserver",
+    "DiagnosticServerHost": "DSGDQJDS71:3843",
+    "DiagnosticServerID": "54ab6b58-8931-46dd-88ae-b9e80c7195c0",
+    "OwnerID": 29939,
+    "OwnerGuid": "e475bcae-fd1b-4fd7-9f04-015095e81e53",
+    "UserAgent": "Mozilla/5.0 (Windows NT; Windows NT 6.1; en-US) WindowsPowerShell/4.0",
+    "Version": "0.0.0.0",
+}
+]
+}

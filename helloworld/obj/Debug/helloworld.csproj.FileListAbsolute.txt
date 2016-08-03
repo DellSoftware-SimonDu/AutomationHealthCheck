@@ -6,11 +6,11 @@ c:\Users\sdu1\Documents\Visual Studio 2015\Projects\helloworld\helloworld\bin\De
 c:\Users\sdu1\Documents\Visual Studio 2015\Projects\helloworld\helloworld\bin\Debug\nunit.framework.dll
 c:\Users\sdu1\Documents\Visual Studio 2015\Projects\helloworld\helloworld\bin\Debug\nunit.framework.xml
 c:\Users\sdu1\Documents\Visual Studio 2015\Projects\helloworld\helloworld\obj\Debug\helloworld.dll
-D:\GitHub\AutomationHealthCheck\helloworld\bin\Debug\helloworld.dll.config
-D:\GitHub\AutomationHealthCheck\helloworld\bin\Debug\helloworld.dll
 D:\GitHub\AutomationHealthCheck\helloworld\bin\Debug\helloworld.pdb
 D:\GitHub\AutomationHealthCheck\helloworld\bin\Debug\nunit.framework.dll
 D:\GitHub\AutomationHealthCheck\helloworld\bin\Debug\nunit.framework.xml
 D:\GitHub\AutomationHealthCheck\helloworld\obj\Debug\helloworld.csprojResolveAssemblyReference.cache
-D:\GitHub\AutomationHealthCheck\helloworld\obj\Debug\helloworld.dll
 D:\GitHub\AutomationHealthCheck\helloworld\obj\Debug\helloworld.pdb
+D:\GitHub\AutomationHealthCheck\helloworld\bin\Debug\helloworld.exe.config
+D:\GitHub\AutomationHealthCheck\helloworld\bin\Debug\helloworld.exe
+D:\GitHub\AutomationHealthCheck\helloworld\obj\Debug\helloworld.exe

@@ -1,0 +1,76 @@
+{
+"Procedures":[
+	{
+    
+    "Columns": [
+        {
+            "Name": "size_of_cached_adhoc_plans_bytes",
+            "DataType": 8,
+            "Values": [
+                "10067968"
+            ]
+        },
+        {
+            "Name": "total_size_of_cached_plans_bytes",
+            "DataType": 8,
+            "Values": [
+                "189415424"
+            ]
+        },
+        {
+            "Name": "size_of_buffer_cache_bytes",
+            "DataType": 8,
+            "Values": [
+                "1203904512"
+            ]
+        },
+        {
+            "Name": "optimized_for_adhoc_workloads",
+            "DataType": 8,
+            "Values": [
+                "0"
+            ]
+        },
+        {
+            "Name": "instance",
+            "DataType": 1,
+            "Values": [
+                "ZHUW2K8R2SPL300\\SQL2008R2"
+            ]
+        },
+        {
+            "Name": "service",
+            "DataType": 1,
+            "Values": [
+                "SQL2008R2"
+            ]
+        },
+        {
+            "Name": "instance_start_time_utc",
+            "DataType": 5,
+            "Values": [
+                "2016-06-16T03:35:50.083-07:00"
+            ]
+        },
+        {
+            "Name": "rownum",
+            "DataType": 8,
+            "Values": [
+                "1"
+            ]
+        }
+    ],
+	"Timestamp": "{{Timestamp}}",
+    "ConnectionName": "zhuw2k8r2spl300.melquest.dev.mel.au.qsft_sql2008r2_sqlserver",
+    "PackageName": "sqlserver_spotlight",
+    "ProcedureName": "healthcheckadhocworkloadconfiguration",
+    "TechnologyName": "database/sqlserver",
+    "DiagnosticServerHost": "DSGDQJDS71:3843",
+    "DiagnosticServerID": "54ab6b58-8931-46dd-88ae-b9e80c7195c0",
+    "OwnerID": 29939,
+    "OwnerGuid": "e475bcae-fd1b-4fd7-9f04-015095e81e53",
+    "UserAgent": "Mozilla/5.0 (Windows NT; Windows NT 6.1; en-US) WindowsPowerShell/4.0",
+    "Version": "0.0.0.0",
+}
+]
+}

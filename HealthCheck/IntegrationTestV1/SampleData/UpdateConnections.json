@@ -1,0 +1,91 @@
+[
+  {
+    "DiagnosticServerName": "DSGDQJDS71:3843",
+    "DiagnosticServerID": "54ab6b58-8931-46dd-88ae-b9e80c7195c0",
+    "ConnectionName": "zhuw2k8r2spl300.melquest.dev.mel.au.qsft",
+    "DisplayName": "zhuw2k8r2spl300.melquest.dev.mel.au.qsft",
+    "TechnologyName": "os/windows",
+    "IsEnabled": true,
+    "IsOnPrem": false,
+    "Properties": {
+      "fullversion": "6.1.7601 Microsoft Windows Server 2008 R2 Standard "
+    },
+    "Tags": [],
+    "Relationships": [
+      {
+        "RelationshipType": "HOST_TO",
+        "ConnectionName": "zhuw2k8r2spl300.melquest.dev.mel.au.qsft_sql2008r2_sqlserver",
+        "TechnologyName": "database/sqlserver"
+      }
+    ],
+    "MonitoringConfig": ""
+   
+  },
+  {
+    "DiagnosticServerName": "DSGDQJDS71:3843",
+    "DiagnosticServerID": "54ab6b58-8931-46dd-88ae-b9e80c7195c0",
+    "ConnectionName": "zhuw2k8r2spl300.melquest.dev.mel.au.qsft_sql2008r2_sqlserver",
+    "DisplayName": "zhuw2k8r2spl300.melquest.dev.mel.au.qsft\\sql2008r2",
+    "TechnologyName": "database/sqlserver",
+    "IsEnabled": true,
+    "IsOnPrem": false,
+    "Properties": {
+      "fullversion": "10.50.1617.0"
+    },
+    "Tags": [],
+    "Relationships": [
+      {
+        "RelationshipType": "HOSTED_BY",
+        "ConnectionName": "zhuw2k8r2spl300.melquest.dev.mel.au.qsft",
+        "TechnologyName": "os/windows"
+      }
+    ],
+    "MonitoringConfig": ""
+  },
+  {
+        "DiagnosticServerName":  "DSGDQJDS71:3843",
+        "DiagnosticServerID":  "54ab6b58-8931-46dd-88ae-b9e80c7195c0",
+        "ConnectionName":  "zhuw12r2spl501.melquest.dev.mel.au.qsft",
+        "DisplayName":  "zhuw12r2spl501.melquest.dev.mel.au.qsft",
+        "TechnologyName":  "os/windows",
+        "IsEnabled":  true,
+        "IsOnPrem":  false,
+        "Properties":  {
+                           "fullversion":  "6.3.9600 Microsoft Windows Server 2012 R2 Datacenter"
+                       },
+        "Tags":  [
+
+                 ],
+        "Relationships":  [
+                              {
+                                  "RelationshipType":  "HOST_TO",
+                                  "ConnectionName":  "zhuw12r2spl501.melquest.dev.mel.au.qsft_sql2016_sqlserver",
+                                  "TechnologyName":  "database/sqlserver"
+                              }
+                          ],
+        "MonitoringConfig":  ""
+    },
+    {
+        "DiagnosticServerName":  "DSGDQJDS71:3843",
+        "DiagnosticServerID":  "54ab6b58-8931-46dd-88ae-b9e80c7195c0",
+        "ConnectionName":  "zhuw12r2spl501.melquest.dev.mel.au.qsft_sql2016_sqlserver",
+        "DisplayName":  "zhuw12r2spl501.melquest.dev.mel.au.qsft\\sql2016",
+        "TechnologyName":  "database/sqlserver",
+        "IsEnabled":  true,
+        "IsOnPrem":  false,
+        "Properties":  {
+                           "fullversion":  "13.0.1601.5"
+                       },
+        "Tags":  [
+
+                 ],
+        "Relationships":  [
+                              {
+                                  "RelationshipType":  "HOSTED_BY",
+                                  "ConnectionName":  "zhuw12r2spl501.melquest.dev.mel.au.qsft",
+                                  "TechnologyName":  "os/windows"
+                              }
+                          ],
+        "MonitoringConfig":  ""
+    }
+]

@@ -1,0 +1,39 @@
+<project name="worker-systemhealthchecks--b-d--worker-systemhealthchecks-prod" default="deploy">
+ 
+  <property name="project.root" location=".." />
+  <property file="C:\ProgramData\SpotlightCloud\Keys\reactive-web.properties"/>
+
+
+  <target name="restore.packages" description="Restore all referenced NuGet packages from Internet or local cache (if downloaded before).">
+    <exec executable="C:\Program Files (x86)\NuGet\nuget.exe" failonerror="true">
+      <arg line="restore" />
+      <arg line="${project.root}\SpotlightCloud-HealthCheck.sln" />
+    </exec>
+  </target>
+
+  <target name="deploy" description="Deploys package to Windows Azure, to Production" depends="build">
+<!--    <exec executable="powershell.exe" failonerror="true">-->
+<!--      <arg line="&amp;'${project.root}\Build\Scripts\internal-worker-role-deploy.ps1'" />-->
+<!--      <arg line="-ServicePrincipalPassword ${service.principal.password}" />-->
+<!--      <arg line="-serviceName SystemHealthChecks2Production" />-->
+<!--      <arg line="-roleName AnalyzerWorkerRole" />-->
+<!--      <arg line="-serviceLocation North=Central=US" />-->
+<!--      <arg line="-cspkgName ${project.root}\AnalyzerWorkerRole.Azure\bin\Release\app.publish\AnalyzerWorkerRole.Azure.cspkg"/>-->
+<!--      <arg line="-cscfgName ${project.root}\AnalyzerWorkerRole.Azure\bin\Release\app.publish\ServiceConfiguration.Production.cscfg"/>-->
+<!--      <arg line="-diagcfgName ${project.root}\AnalyzerWorkerRole.Azure\bin\Release\app.publish\Extensions\PaaSDiagnostics.AnalyzerWorkerRole.PubConfig.xml"/>-->
+<!--      <arg line="-slot Production" />-->
+<!--      <arg line="-uploadStoragAccountName healthchecksprodus1"/>-->
+<!--      <arg line="-diagStoragAccountName healthchecksprodus1"/>-->
+<!--    </exec>-->
+  </target>
+ 
+  <target name="build" description="Builds all C# code, creates a package" depends="restore.packages">
+<!--    <exec executable="C:\Program Files (x86)\MSBuild\14.0\Bin\MSBuild.exe" failonerror="true">-->
+<!--      <arg line="/t:CorePublish"/>-->
+<!--      <arg line="${project.root}\AnalyzerWorkerRole.Azure\AnalyzerWorkerRole.Azure.ccproj" />-->
+<!--      <arg line="/property:Configuration=Release"/>-->
+<!--      <arg line="/property:TargetProfile=Production"/>-->
+<!--    </exec>-->
+  </target>
+  
+</project>
