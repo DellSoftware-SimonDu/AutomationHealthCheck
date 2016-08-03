@@ -11,16 +11,16 @@ namespace IntegrationTestV2
     public class TestResult 
     {
         long timeStamp = Convert.ToInt64((DateTime.Now - DateTime.Parse("1/1/1970 0:0:0")).TotalMilliseconds);
-
+        string scriptPath = @"C:\Program Files (x86)\Jenkins\jobs\healthcheckworker-systemhealthchecks2-NunitTest\workspace\HealthCheck\IntegrationTestV2\PSScripts\";
         [SetUp]
         public void UpdateSampleData()
         {
-            ExecutePowerShell.ExecutePoweShell(@"C:\Scripts\UploadSampleData1.ps1", timeStamp);
+            ExecutePowerShell.ExecutePoweShell(scriptPath + "UploadSampleData.ps1", timeStamp);
         }
         [TearDown]
         public void CleanUp()
         {
-            ExecutePowerShell.ExecutePoweShell(@"C:\Scripts\CleanUp.ps1", timeStamp);
+            ExecutePowerShell.ExecutePoweShell(scriptPath + "CleanUp.ps1", timeStamp);
         }
 
         [Test]
