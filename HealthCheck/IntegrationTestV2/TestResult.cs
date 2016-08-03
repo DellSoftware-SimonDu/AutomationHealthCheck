@@ -1,12 +1,9 @@
 ﻿using System;
-using System.IO;
 using NUnit.Framework;
 using System.Linq;
 using System.Text;
 using System.Collections.Generic;
-using System.Net;
-using System.Management.Automation;
-using System.Collections.ObjectModel;
+
 
 namespace IntegrationTestV2
 {
@@ -30,6 +27,7 @@ namespace IntegrationTestV2
         public void TestResultJson()
         {
             Assert.AreEqual(1, 1);
+            
         }
     }
 }
