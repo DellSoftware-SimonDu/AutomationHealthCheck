@@ -6,7 +6,7 @@
   <echo message="Branch: ${env.GIT_BRANCH}" />
   <script language="javascript">
     <![CDATA[
-      project.setProperty('site.url', https://test.spotlightessentials.com);
+      project.setProperty('site.url', 'https://test.spotlightessentials.com');
     ]]>
   </script>
 
