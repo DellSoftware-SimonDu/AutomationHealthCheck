@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<project name="webtest-simon" default="test" basedir=".">
+  <property name="project.root" location="." />
+  <property environment="env"/>
+
+  <echo message="Branch: ${env.GIT_BRANCH}" />
+  <script language="javascript">
+    <![CDATA[
+      project.setProperty('site.url', https://test.spotlightessentials.com);
+    ]]>
+  </script>
+
+
+  <target name="restore.packages" description="Restore all referenced NuGet packages from Internet or local cache (if downloaded before).">
+    <exec executable="C:\Program Files\NuGet\NuGet.exe" failonerror="true">
+      <arg value="restore" />
+      <arg file="${project.root}\GoogleWebTest.sln" />
+    </exec>
+  </target>
+
+  <target name="build" description="Build the whole solution" depends="restore.packages">
+    <exec executable="C:\Program Files (x86)\MSBuild\14.0\Bin\MSBuild.exe" failonerror="true">
+      <arg value="/t:Build"/>
+      <arg file="${project.root}\GoogleWebTest.sln" />
+      <arg value="/property:Configuration=Release"/>
+    </exec>
+  </target>
+
+  <target name="test" description="Execute unit tests" depends="build" >
+    <!-- Make the first request to make Azure website up and running -->
+    <get src="${site.url}" dest="index.html"/>
+    
+    <exec executable="C:\Program Files (x86)\NUnit\bin\nunit-console.exe" failonerror="true">
+      <env key="SITE_URL" value="${site.url}"/>
+      <arg file="${project.root}\bin\Release\GoogleWebTest.dll" />
+      <arg value="--result:${project.root}\TestResults.xml;format=nunit2"/>
+    </exec>
+  </target>
+
+</project>
