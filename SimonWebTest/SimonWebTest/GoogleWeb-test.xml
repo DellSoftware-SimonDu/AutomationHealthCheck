@@ -30,7 +30,7 @@
     <!-- Make the first request to make Azure website up and running -->
     <get src="${site.url}" dest="index.html"/>
     
-    <exec executable="C:\Program Files (x86)\NUnit\bin\nunit-console.exe" failonerror="true">
+    <exec executable="C:\Program Files (x86)\NUnit.org\nunit-console\nunit3-console.exe" failonerror="true">
       <env key="SITE_URL" value="${site.url}"/>
       <arg file="${project.root}\SimonWebTest\bin\Release\SimonWebTest.dll" />
       <arg value="--result:${project.root}\TestResults.xml;format=nunit2"/>
