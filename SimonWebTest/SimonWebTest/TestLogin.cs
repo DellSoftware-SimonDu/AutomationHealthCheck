@@ -18,8 +18,8 @@ namespace Dell.WebTests
             // set up the desired capabilities
             var desiredCapabilites = new DesiredCapabilities("internet explorer", "11", Platform.CurrentPlatform); // set the desired browser
             desiredCapabilites.SetCapability("platform", "Windows 7"); // operating system to use
-            desiredCapabilites.SetCapability("username", Environment.GetEnvironmentVariable("SAUCE_USER_NAME"));
-            desiredCapabilites.SetCapability("accessKey", Environment.GetEnvironmentVariable("SAUCE_API_KEY"));
+            desiredCapabilites.SetCapability("username", "simondu123");
+            desiredCapabilites.SetCapability("accessKey", "e97b0dde-bd4e-4f09-8261-6a344ff8556c");
             desiredCapabilites.SetCapability("name", TestContext.CurrentContext.Test.Name); // give the test a name
 
             // start a new remote web driver session on Sauce Labs
